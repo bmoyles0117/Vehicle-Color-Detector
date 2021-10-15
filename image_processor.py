@@ -1,4 +1,6 @@
-import Image
+# import Image
+from PIL import Image
+
 
 class Colors(object):
 	class Color(object):
@@ -48,7 +50,7 @@ class ColorWheel(object):
 			else:
 				return Colors.Black(dominant_colors[0].value)
 		else:
-			print "Dominant Colors : %s" % dominant_colors
+			print("Dominant Colors : %s" % dominant_colors)
 	
 	def get_dominant_colors(self):
 		max_color = max([x.value for x in self.rgb])
@@ -94,7 +96,7 @@ def process_image(image):
 		final_colors[color.__class__] = final_colors.get(color.__class__, 0) + strength
 
 	for color, strength in final_colors.items():
-		print "%s - %s" % (color.__name__, strength, )
+		print("%s - %s" % (color.__name__, strength, ))
 
 	image.show()
 
